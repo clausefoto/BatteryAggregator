@@ -8,8 +8,22 @@ A battery monitor D-Bus service that aggregates the data for multiple batteries 
 
 Install [SetupHelper](https://github.com/kwindrem/SetupHelper).
 
-Select the Battery Aggregator as the `Battery monitor` under `System setup`.
+## GUI v1
 
+1. Go to [http://venus.localhost/gui-v1/](http://venus.localhost/gui-v1/).
+2. In the menu, go to `Settings` -> `Package Manager` -> `Inactive Packages`.
+3. Install Battery Aggregator.
+4. Then, go to `Settings` -> `System setup` and select Battery Aggregator as the `Battery monitor`.
+
+## GUI v2
+
+1. SSH to Venus.
+2. `cd /data`.
+3. Download Battery Aggregator from [https://github.com/pulquero/BatteryAggregator/archive/refs/heads/main.zip](https://github.com/pulquero/BatteryAggregator/archive/refs/heads/main.zip). E.g.,
+`wget https://github.com/pulquero/BatteryAggregator/archive/refs/heads/main.zip`.
+4. Unzip it and rename the directory to BatteryAggregator.
+5. Run the install script, `/data/BatteryAggregator/setup`.
+6. Then, go to `Settings` -> `System setup` and select Battery Aggregator as the `Battery monitor`.
 
 # Configuration
 
