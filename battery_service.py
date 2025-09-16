@@ -239,8 +239,7 @@ AGGREGATED_BATTERY_PATHS = {
     '/System/MinCellVoltage': PathDefinition(VOLTAGE, MinAggregator),
     '/System/MinVoltageCellId': PathDefinition(NO_UNIT, MinAggregator),
     '/System/MaxCellTemperature': PathDefinition(TEMPERATURE, MaxAggregator),
-    '/System/MaxTempera
-    tureCellId': PathDefinition(NO_UNIT, MaxAggregator),
+    '/System/MaxTemperatureCellId': PathDefinition(NO_UNIT, MaxAggregator),
     '/System/MaxCellVoltage': PathDefinition(VOLTAGE, MaxAggregator),
     '/System/MaxVoltageCellId': PathDefinition(NO_UNIT, MaxAggregator),
     '/System/NrOfModulesBlockingCharge': PathDefinition(NO_UNIT, SumAggregator),
