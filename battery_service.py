@@ -219,58 +219,30 @@ class ActivePathDefinition(PathDefinition):
 SERIES_MODE = True
 
 AGGREGATED_BATTERY_PATHS = {
-    '/Dc/0/Current': PathDefinition(
-        CURRENT,
-        Mean0Aggregator if SERIES_MODE else SumAggregator
-    ),
-    '/Dc/0/Voltage': PathDefinition(
-        VOLTAGE,
-        SumAggregator if SERIES_MODE else Mean0Aggregator
-    ),
+    '/Dc/0/Current': PathDefinition(CURRENT, Mean0Aggregator if SERIES_MODE else SumAggregator),
+    '/Dc/0/Voltage': PathDefinition(VOLTAGE, SumAggregator if SERIES_MODE else Mean0Aggregator),
     '/Dc/0/Power': PathDefinition(POWER, SumAggregator),
-
-    '/Dc/0/Temperature': PathDefinition(
-        TEMPERATURE,
-        MaxAggregator if SERIES_MODE else Mean0Aggregator
-    ),
-
-    '/Soc': PathDefinition(
-        NO_UNIT,
-        MinAggregator if SERIES_MODE else Mean0Aggregator
-    ),
+    '/Dc/0/Temperature': PathDefinition(TEMPERATURE, MaxAggregator if SERIES_MODE else Mean0Aggregator),
+    '/Soc': PathDefinition(NO_UNIT, MinAggregator if SERIES_MODE else Mean0Aggregator),
     '/TimeToGo': PathDefinition(NO_UNIT, Mean0Aggregator),
-
-    '/Capacity': PathDefinition(
-        AMP_HOURS,
-        Mean0Aggregator if SERIES_MODE else SumAggregator
-    ),
-    '/InstalledCapacity': PathDefinition(
-        AMP_HOURS,
-        Mean0Aggregator if SERIES_MODE else SumAggregator
-    ),
-    '/ConsumedAmphours': PathDefinition(
-        AMP_HOURS,
-        Mean0Aggregator if SERIES_MODE else SumAggregator
-    ),
-
+    '/Capacity': PathDefinition(AMP_HOURS, Mean0Aggregator if SERIES_MODE else SumAggregator),
+    '/InstalledCapacity': PathDefinition(AMP_HOURS, Mean0Aggregator if SERIES_MODE else SumAggregator),
+    '/ConsumedAmphours': PathDefinition(AMP_HOURS, Mean0Aggregator if SERIES_MODE else SumAggregator),
     '/Balancing': PathDefinition(NO_UNIT, BooleanAggregator),
-
     '/Info/BatteryLowVoltage': PathDefinition(VOLTAGE, MaxAggregator),
     '/Info/ChargeMode': PathDefinition(NO_UNIT, ChargeModeAggregator),
-
     '/Io/AllowToCharge': PathDefinition(NO_UNIT, BooleanAggregator),
     '/Io/AllowToDischarge': PathDefinition(NO_UNIT, BooleanAggregator),
     '/Io/AllowToBalance': PathDefinition(NO_UNIT, BooleanAggregator),
-
     '/System/MinCellTemperature': PathDefinition(TEMPERATURE, MinAggregator),
     '/System/MinTemperatureCellId': PathDefinition(NO_UNIT, MinAggregator),
     '/System/MinCellVoltage': PathDefinition(VOLTAGE, MinAggregator),
     '/System/MinVoltageCellId': PathDefinition(NO_UNIT, MinAggregator),
     '/System/MaxCellTemperature': PathDefinition(TEMPERATURE, MaxAggregator),
-    '/System/MaxTemperatureCellId': PathDefinition(NO_UNIT, MaxAggregator),
+    '/System/MaxTempera
+    tureCellId': PathDefinition(NO_UNIT, MaxAggregator),
     '/System/MaxCellVoltage': PathDefinition(VOLTAGE, MaxAggregator),
     '/System/MaxVoltageCellId': PathDefinition(NO_UNIT, MaxAggregator),
-
     '/System/NrOfModulesBlockingCharge': PathDefinition(NO_UNIT, SumAggregator),
     '/System/NrOfModulesBlockingDischarge': PathDefinition(NO_UNIT, SumAggregator),
     '/System/NrOfModulesOnline': PathDefinition(NO_UNIT, SumAggregator),
@@ -289,7 +261,7 @@ AGGREGATED_BATTERY_PATHS = {
     '/Alarms/HighChargeTemperature': PathDefinition(NO_UNIT, AlarmAggregator),
 }
 
-}
+
 
 ACTIVE_BATTERY_PATHS = {
     '/Info/MaxChargeCurrent': ActivePathDefinition(CURRENT, triggerPaths={'/Info/MaxChargeCurrent', '/Io/AllowToCharge'}, action=lambda api: api._updateCCL()),
