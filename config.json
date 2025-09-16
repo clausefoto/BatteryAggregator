@@ -1,0 +1,10 @@
+{
+  "virtualBatteries": {
+    "com.victronenergy.battery.virtual1": [
+      "com.victronenergy.battery.ttyS2"
+    ]
+  },
+  "currentRatioMethod": "ir",
+  "cvlMode": "max_when_balancing",
+  "logLevel": "DEBUG"
+}
